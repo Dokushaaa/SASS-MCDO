@@ -1,0 +1,38 @@
+//base for typographical sizes of the divs, sections, body. i.e. line-height, liding.
+@use '../abstract/' as *;
+@font-face{
+    font-family: "Speedee-Regular";
+    src: url('../../fonts/Speedee-Regular.woff');
+}
+@font-face{
+    font-family: "Speedee-Bold";
+    src: url('../../fonts/Speedee-Bold.woff');
+}
+
+body{
+    font-family: "Speedee-regular", arial, sans-serif;
+    color:$clr-dark;
+    line-height: 1.6;
+    font-size: 1.6rem;
+}
+html{
+    font-size: 10px;
+}
+a{
+    text-decoration: none;
+    color: $clr-dark;
+}
+p{
+    margin-bottom: 1.3rem;
+}
+h1{
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.4rem, 6vw, 1.6rem);
+}
+.container{
+    max-width: 98rem;
+    padding: 0 1.6rem;
+    margin:0 auto;
+}
+
+    

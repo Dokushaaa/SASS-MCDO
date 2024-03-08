@@ -1,0 +1,100 @@
+@use '../abstract/' as *;
+.header{
+    
+    box-shadow: rgba(99, 99, 99, 0.9) 1px 2px 20px 0px;
+    padding: 2rem 0 0;
+    //space for actual header section:
+    &__wrapper{
+        //space for actual wrapper div:
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .toggle__button{
+            //space for toggle__button div:
+            span{
+                display:block;
+                width: 3.5rem;
+                height: .5rem;
+                background-color: $clr--accent;
+                margin-bottom: 0.7rem;
+                transition: .5s ease;
+            }
+        }
+        .toggle__button.cross{
+            opacity: 0;
+            visibility: hidden;
+            //i hate the things underneath
+            span:nth-child(1){transform:translate(0.5px,10px)rotate(45deg);}
+            span:nth-child(2){opacity: 0;}
+            span:nth-child(3){transform:translate(0.5px,-10px)rotate(-45deg);}
+        }
+    }
+    .dropdown.show{
+        opacity: 1;
+        visibility: visible;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.8) 100%); 
+    }
+    .dropdown{
+        transition: ease-in-out .2s;
+        position:fixed;
+        background-color: rgba($clr--nuetral, 0.8);
+        z-index:9999;
+        height: 100vh;
+        top:0;
+        left:0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+   
+        button{
+            background-color: transparent;
+            border: none;
+            font-size: 4rem;
+            color:$clr--primary;
+            padding: 1rem;
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform: translate(-2.5%,35%);
+        }
+        
+        .nav {
+           
+            margin-bottom: 2rem;
+            a{
+            color:$clr--accent;
+            }
+            &__menu a{
+                margin-left: 5rem;
+            }
+            ul{
+                list-style: none;
+            }li{
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: .6rem;
+
+                .nav__submenu li{
+                    margin-left: 5rem;
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    
+                }
+            }
+        } 
+        &__footer{
+            text-align: center;
+            margin-top: 1rem;
+            img{
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            a{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

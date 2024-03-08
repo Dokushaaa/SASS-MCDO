@@ -1,0 +1,72 @@
+@use '../base' as *;
+@use '../layout/' as*;
+@use '../abstract/' as*;
+
+.banner{
+    padding-top: 0.5rem;
+    img{
+       @include imgCover(20rem, 100%);
+        filter: brightness(90%);
+        @include mediaQuery(){
+            @include imgCover(60rem, 100%);
+                filter: brightness(90%);
+        }
+    }
+}
+.cards{
+    //space for cards section:
+    margin-bottom: 2rem;
+    &__wrapper{
+        //space for cards wrapper:
+        @include grid(2);
+        grid-row-gap: 1rem;
+        padding: 5rem 0;
+        @include mediaQuery(){
+                @include grid(3);
+                grid-row-gap:6rem;
+            } 
+        a{
+            justify-self: center;
+         }
+    .card{
+            //space for cards section:
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+            height: 150px;
+            width: 180px;
+            
+            img{
+            //space for img edits:
+            // @include ImageCover;
+            @include imgCover(100%,100%);
+            // width: 100%;
+            // object-fit: cover;
+            // aspect-ratio: 1 / 1;
+            filter: brightness(50%);
+            transition: ease-in-out 500ms;
+            }&:hover img{
+                transform:scale(1.2);
+                filter: brightness(100%);
+            }
+            &:hover h4{
+                display:none;
+            }
+           h4{
+            position:absolute;
+            bottom: 0;
+            color:$clr--nuetral;
+            left:50%;
+            transform: translateX(-50%);
+            text-align: center;
+           }
+           @include mediaQuery(){
+                width:262px;
+                height: 262px;
+                }
+        
+        }
+   
+    }
+   
+}
