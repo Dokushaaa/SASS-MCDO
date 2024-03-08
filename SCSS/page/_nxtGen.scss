@@ -1,38 +1,25 @@
-@use '../abstract/' as *;
+@use '../abstract' as *;
+@use '../component' as *;
 
-.banner--nxtgen{
-    background-image: url('../../img//NXTGEN/bottomBanner.jpg');
-    @include mediaQuery{
-        background-image: url('../../img//NXTGEN/nxtgenSmall.jpg');
-    }
-    min-height: 30rem;
-    @include d-flex(center,center);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center, center;
-    h1{
-        font-size: clamp(1rem,10vw,2rem);
-        display: none;
-        font-weight: bolder;
-        text-align: justify;
+.banner--nextgen {
+    background-image: url('../../images/nextgen/banner-nextgen-sm.jpg');
+    @include mediaQuery {
+        background-image: url('../../images/nextgen/banner-nextgen.jpg');
     }
 }
-.nxtGen{
-    &__title{
-        display: flex;
-        justify-content: center;
-        align-self: center;
-        text-align: center;
- 
-        h2{
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-family: Speedee-Bold;
-        }
-        h4{
-            font-size: clamp(2rem, 6vw, 3rem);
-        }
+
+.nextgen {
+    h3 {
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-family: "Speedee-bold";
     }
-    iframe{
-        aspect-ratio: 16/9;
+
+    h4 {
+        font-size: clamp(2rem, 6vw, 3rem);
+     
+    }
+
+    iframe {
+        aspect-ratio:  16 / 9;
     }
 }
